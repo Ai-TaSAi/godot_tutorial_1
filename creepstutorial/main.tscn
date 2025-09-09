@@ -8,7 +8,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_1bvp3"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1, -1, 0, 0, 0, 0, 478, -1, 0, 0, 0, 0, 478, 723, 0, 0, 0, 0, 1, 723, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, -1, -1)
+"points": PackedVector2Array(0, 0, 0, 0, -1, -1, 0, 0, 0, 0, 1105.17, 0.0370326, 0, 0, 0, 0, 1105.17, 829.663, 0, 0, 0, 0, -3.02327, 830.7, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, -1, -1)
 }
 point_count = 6
 
@@ -36,7 +36,7 @@ color = Color(0.425048, 0.619792, 0.300212, 1)
 [node name="Player" parent="." instance=ExtResource("2_h2yge")]
 
 [node name="MobTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.25
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
@@ -48,10 +48,13 @@ one_shot = true
 position = Vector2(240, 450)
 
 [node name="MobPath" type="Path2D" parent="."]
+position = Vector2(-0.0454739, -0.0357102)
+scale = Vector2(0.977263, 0.96429)
 curve = SubResource("Curve2D_1bvp3")
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
 position = Vector2(-1, -1)
+rotation = 0.000937495
 
 [node name="HUD" parent="." instance=ExtResource("4_1bvp3")]
 
@@ -61,8 +64,8 @@ stream = SubResource("AudioStreamOggVorbis_7mycd")
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_lquwl")
 
-[connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="hit" from="Player" to="." method="game_over"]
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
