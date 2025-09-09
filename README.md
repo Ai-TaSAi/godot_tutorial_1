@@ -8,6 +8,8 @@ Art, Audio, and Font Assets, wherever possible, are provided by Godot Docs.
 
 Rough time for completion: 2.5 hours
 
+Note here to make sure git is working smoothly.
+
 Potential Changes (Written before Lab):
     - Vary enemy size
     - Implementing custom assets
