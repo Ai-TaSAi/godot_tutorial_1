@@ -1,52 +1,74 @@
-[gd_scene load_steps=10 format=3 uid="uid://wyia6nbwnbyp"]
+[gd_scene load_steps=13 format=3 uid="uid://wyia6nbwnbyp"]
 
 [ext_resource type="Script" uid="uid://b8avl830v2q1k" path="res://mob.gd" id="1_1qmh0"]
-[ext_resource type="Texture2D" uid="uid://dacuhv6sdfl71" path="res://art/enemyFlyingAlt_1.png" id="2_gfurk"]
-[ext_resource type="Texture2D" uid="uid://70p280w31hjg" path="res://art/enemyFlyingAlt_2.png" id="3_ieysi"]
-[ext_resource type="Texture2D" uid="uid://cikwwcfm3ty2p" path="res://art/enemySwimming_1.png" id="4_cixyi"]
-[ext_resource type="Texture2D" uid="uid://cmekx8r54rvyy" path="res://art/enemySwimming_2.png" id="5_7ulmv"]
-[ext_resource type="Texture2D" uid="uid://dy8v3ubjrek4a" path="res://art/enemyWalking_1.png" id="6_pcqmr"]
-[ext_resource type="Texture2D" uid="uid://ki4cwyhpjg3f" path="res://art/enemyWalking_2.png" id="7_jbnni"]
+[ext_resource type="Texture2D" uid="uid://c2brdvdybc7pt" path="res://art/type_two1.png" id="2_ieysi"]
+[ext_resource type="Texture2D" uid="uid://dd57c2dkp1xms" path="res://art/type_two2.png" id="3_cixyi"]
+[ext_resource type="Texture2D" uid="uid://bqlp5s2gqvf7g" path="res://art/type_four1.png" id="4_gfurk"]
+[ext_resource type="Texture2D" uid="uid://cgr2uo630un8v" path="res://art/type_one1.png" id="4_ieysi"]
+[ext_resource type="Texture2D" uid="uid://dux5pryxqfvtl" path="res://art/type_one2.png" id="5_cixyi"]
+[ext_resource type="Texture2D" uid="uid://d2sre6ykimowp" path="res://art/type_three1.png" id="6_ieysi"]
+[ext_resource type="Texture2D" uid="uid://c0v7ae7p38ypw" path="res://art/type_three2.png" id="7_cixyi"]
+[ext_resource type="Texture2D" uid="uid://c2n6ldo5qpj02" path="res://art/type_five1.png" id="9_cixyi"]
+[ext_resource type="Texture2D" uid="uid://bagbugkfii7t0" path="res://art/type_five2.png" id="10_7ulmv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yscv0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_gfurk")
+"texture": ExtResource("2_ieysi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ieysi")
+"texture": ExtResource("3_cixyi")
 }],
 "loop": true,
-"name": &"fly",
-"speed": 3.0
+"name": &"alien_rock",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_cixyi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_7ulmv")
+"texture": ExtResource("4_gfurk")
 }],
 "loop": true,
-"name": &"swim",
-"speed": 3.0
+"name": &"asteroid",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_pcqmr")
+"texture": ExtResource("4_ieysi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_jbnni")
+"texture": ExtResource("5_cixyi")
 }],
 "loop": true,
-"name": &"walk",
+"name": &"pod",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ieysi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cixyi")
+}],
+"loop": true,
+"name": &"reference",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_cixyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7ulmv")
+}],
+"loop": true,
+"name": &"reference_two",
 "speed": 3.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eqsov"]
-radius = 36.0
-height = 100.0
+radius = 26.0
+height = 108.0
 
 [node name="Mob" type="RigidBody2D" groups=["mobs"]]
 collision_mask = 0
@@ -54,10 +76,10 @@ gravity_scale = 0.0
 script = ExtResource("1_1qmh0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.75, 0.75)
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_yscv0")
-animation = &"fly"
-frame_progress = 0.339762
+animation = &"reference_two"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

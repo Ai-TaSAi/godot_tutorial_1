@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://d31w15eesd1is"]
+[gd_scene load_steps=10 format=4 uid="uid://d31w15eesd1is"]
 
 [ext_resource type="Script" uid="uid://cq0pg627y4q0" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://wyia6nbwnbyp" path="res://mob.tscn" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://jdnrqh3qdvd8" path="res://player.tscn" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://7ls3yqhxt1ja" path="res://art/Background.png" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bfhi5kh8a0s1s" path="res://hud.tscn" id="4_1bvp3"]
 [ext_resource type="AudioStream" uid="uid://lnpxoiyg4q36" path="res://art/gameover.wav" id="5_lquwl"]
 
@@ -32,6 +33,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.425048, 0.619792, 0.300212, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_7mycd")
 
 [node name="Player" parent="." instance=ExtResource("2_h2yge")]
 
