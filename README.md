@@ -23,7 +23,7 @@ Potential Changes (Written before Lab):
 - Adding further keyboard inputs, or controller inputs
 
 ## Implemented Changes:
-- Update 1: Expanded screen size and edge to spawn enemies.
-- Update 2: Implemented WASD Controls.
-- Update 3: Overhauled most art assets.
-- Update 4: Changed gameplay system to be rotation based as opposed to cardinal directions.
+- Update 1: Expanded screen size and edge to spawn enemies. ~30 minutes
+- Update 2: Implemented WASD Controls. ~2 minutes
+- Update 3: Overhauled most art assets. ~1 hour
+- Update 4: Changed gameplay system to be rotation based as opposed to cardinal directions. ~1 hour
