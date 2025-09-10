@@ -75,5 +75,6 @@ func _on_body_entered(body: Node2D) -> void:
 # Function resets the player when starting a new game.
 func start(pos):
 	position = pos
+	facing_degrees = 270
 	show()
 	$CollisionShape2D.disabled = false
